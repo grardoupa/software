@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 1: Layout Básico</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos generales para simular Material Design */
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif; /* Fuente recomendada para Material Design */
+            background-color: #f0f2f5; /* Un gris claro para el fondo del body */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Asegura que el body ocupe al menos toda la altura de la ventana */
+        }
+
+        /* Contenedor principal de la "WebApp" */
+        .contenedor {
+            display: grid; /* Usamos Grid para la distribución principal */
+            max-width: 400px; /* Ancho máximo fijo como en una app móvil */
+            width: 100%; /* Asegura que ocupe el 100% del espacio disponible hasta 400px */
+            height: 100vh; /* Ocupa toda la altura de la ventana */
+            /* Si no queremos que ocupe toda la altura, podemos usar un 'min-height' o un 'height' fijo */
+            background-color: #ffffff; /* Fondo blanco para la "pantalla" de la app */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra sutil para simular elevación */
+            border-radius: 8px; /* Esquinas redondeadas para un look moderno */
+            overflow: hidden; /* Asegura que los elementos hijos no se desborden si tienen border-radius */
+
+            /* Definición de filas para AppBar y Contenido */
+            grid-template-rows: auto 1fr; /* 'auto' para el AppBar (se ajusta a su contenido), '1fr' para el contenido (ocupa el resto) */
+        }
+
+        /* Estilos para el AppBar (Encabezado) */
+        .app-bar {
+            background-color: #6200EE; /* Color primario de Material Design (morado oscuro) */
+            color: white; /* Texto en blanco */
+            height: 56px; /* Altura estándar para app bars en Android */
+            display: flex; /* Usamos Flexbox para alinear contenido dentro del app bar */
+            align-items: center; /* Centrar verticalmente los elementos */
+            padding: 0 16px; /* Padding horizontal para el contenido del app bar */
+            font-size: 1.25rem; /* Tamaño de fuente para el título */
+            font-weight: 500; /* Peso de la fuente para el título */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.15); /* Sombra debajo del app bar */
+            z-index: 10; /* Asegura que esté por encima de otros elementos */
+        }
+
+        /* Estilos para el Área de Contenido Principal */
+        .contenido-principal {
+            background-color: #f5f5f5; /* Un gris más claro para el fondo del contenido */
+            padding: 16px; /* Padding interno para el contenido */
+            overflow-y: auto; /* Permite scroll si el contenido es muy largo */
+        }
+
+        .contenido-principal h2 {
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+
+        .contenido-principal p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Media query para pantallas más pequeñas, aunque el max-width ya lo restringe */
+        @media (max-width: 400px) {
+            .contenedor {
+                border-radius: 0; /* En pantallas pequeñas, no hay esquinas redondeadas */
+                box-shadow: none; /* No hay sombra si ocupa toda la pantalla */
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <header class="app-bar">
+            Mi Aplicación
+        </header>
+
+        <main class="contenido-principal">
+            <h2>Bienvenido a tu WebApp Android</h2>
+            <p>Este es el área de contenido principal de tu aplicación. Aquí podrás colocar todos los elementos, como tarjetas, listas, formularios y más.</p>
+            <p>Material Design se enfoca en una experiencia de usuario clara, intuitiva y visualmente atractiva.</p>
+            <p>En las siguientes actividades, exploraremos cómo implementar diferentes componentes siguiendo sus principios.</p>
+            <p>¡Sigue adelante!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Curabitur pretium tincidunt lacus, eget pretium massa interdum nec. Fusce aliquet turpis ut nunc pretium, sit amet elementum nisi aliquet.</p>
+            <p>Vivamus id bibendum odio. Sed ut nibh consectetur, posuere sapien at, tincidunt turpis. Mauris at nulla nec est efficitur congue.</p>
+        </main>
+    </div>
+</body>
+</html>
